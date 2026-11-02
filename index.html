@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Please Touch! — Designing Tactile Communication</title>
+  <meta name="description" content="A student research project at Lehigh University exploring reproducible methods for translating visual art and information into tactile graphics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a href="#top" class="logo" aria-label="Please Touch! home">
+        <span class="logo-mark" aria-hidden="true">
+          <!-- Braille-style dot logo -->
+          <svg viewBox="0 0 24 36" width="20" height="30"><circle cx="6" cy="6" r="4"/><circle cx="18" cy="6" r="4"/><circle cx="6" cy="18" r="4"/><circle cx="18" cy="30" r="4"/></svg>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#research">[ Research ]</a></li>
+        <li><a href="#gallery">[ Gallery ]</a></li>
+        <li><a href="#partners">[ Partners ]</a></li>
+      </ul>
+      <div class="a11y-tools" role="group" aria-label="Display settings">
+        <button type="button" class="tool-btn" id="text-size" aria-label="Change text size">
+          <span aria-hidden="true">A<span class="small-a">A</span></span>
+        </button>
+        <button type="button" class="tool-btn" id="theme-toggle" aria-pressed="false" aria-label="Dark, high contrast mode">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HOME / HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <p class="eyebrow reveal">LUAG Lab, Lehigh University Art Galleries &nbsp;·&nbsp; November 4, 2026 – February 26, 2027</p>
+
+      <div class="hero-title-wrap reveal">
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-line hero-line-1">Please</span>
+          <span class="hero-line hero-line-2">Touch!</span>
+        </h1>
+        <p class="hero-aside"><strong>Designing Tactile Communication.</strong> Exploring reproducible methods for translating visual art and information into tactile graphics.</p>
+      </div>
+
+      <div class="hero-methods reveal">
+        <p class="method"><span class="method-letter" aria-hidden="true">A</span>3D Printing</p>
+        <span class="slash" aria-hidden="true"></span>
+        <figure class="hero-figure">
+          <!-- TODO: replace with a photo of our work -->
+          <div class="img-placeholder" role="img" aria-label="Placeholder for a photo of our tactile work">
+            <span>Picture of our work</span>
+          </div>
+        </figure>
+        <p class="method"><span class="method-letter" aria-hidden="true">B</span>Swell Paper</p>
+        <span class="slash" aria-hidden="true"></span>
+        <p class="method"><span class="method-letter" aria-hidden="true">C</span>Textiles</p>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to introduction">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro" id="about" aria-labelledby="intro-title">
+      <div class="container narrow">
+        <h2 id="intro-title" class="display-lg reveal">How can art and information be shared through touch?</h2>
+        <div class="intro-body reveal">
+          <p>Maps, diagrams, charts, and works of art help people learn about the world around us; however, when information is shared only in visual format, it can create barriers for those who are Blind or have Low-Vision.</p>
+          <p>Tactile graphics offer additional ways to explore and understand information, incorporating raised lines, different textures, and other elements that can be felt with fingers and hands.</p>
+          <p>In museums, objects and artwork are often displayed in cases and behind frames that separate the viewer and create harsh glare. Tactile objects help bridge this gap, connecting audiences of varying abilities to visualize subject matter through touch.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS (stamps) ============ -->
+    <section class="process" aria-labelledby="process-title">
+      <svg class="shapes" aria-hidden="true" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+        <path class="s-navy" d="M0 0h520c-40 140-160 230-330 260C110 275 40 250 0 220z"/>
+        <path class="s-lav" d="M640 0h300c-10 120-90 210-210 230-60-80-90-150-90-230z"/>
+        <path class="s-navy" d="M1200 120v360c-120-10-230-90-260-200 70-90 160-150 260-160z"/>
+        <path class="s-butter" d="M0 470c150-40 300 10 380 120l40 110H0z"/>
+        <path class="s-lav" d="M620 700c20-120 120-200 240-200 120 0 220 70 250 200z"/>
+      </svg>
+
+      <div class="container">
+        <h2 id="process-title" class="display-lg on-shapes reveal">Our Process</h2>
+        <ol class="stamps" role="list">
+          <li class="stamp reveal">
+            <div class="stamp-inner">
+              <div class="stamp-art stamp-art-1" aria-hidden="true"></div>
+              <h3>Preliminary</h3>
+              <p>Literature review. Research the existing knowledge base.</p>
+              <span class="stamp-num" aria-hidden="true">01</span>
+            </div>
+          </li>
+          <li class="stamp reveal">
+            <div class="stamp-inner">
+              <div class="stamp-art stamp-art-2" aria-hidden="true"></div>
+              <h3>Exploratory</h3>
+              <p>Use resources, media, and technologies to explore tactile replication.</p>
+              <span class="stamp-num" aria-hidden="true">02</span>
+            </div>
+          </li>
+          <li class="stamp reveal">
+            <div class="stamp-inner">
+              <div class="stamp-art stamp-art-3" aria-hidden="true"></div>
+              <h3>Evaluation</h3>
+              <p>Assess tactile quality and effectiveness with Blind and Low-Vision users.</p>
+              <span class="stamp-num" aria-hidden="true">03</span>
+            </div>
+          </li>
+          <li class="stamp reveal">
+            <div class="stamp-inner">
+              <div class="stamp-art stamp-art-4" aria-hidden="true"></div>
+              <h3>Iterate</h3>
+              <p>Feedback informs an iterative design process. Repeat!</p>
+              <span class="stamp-num" aria-hidden="true">04</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ BLOG / RESEARCH ============ -->
+    <section class="research" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Blog &amp; Research</p>
+          <h2 id="research-title" class="display-lg">Notes from the work</h2>
+        </header>
+
+        <div class="posts">
+          <article class="post reveal">
+            <div class="post-thumb thumb-navy" aria-hidden="true"></div>
+            <div class="post-body">
+              <h3>The Big Picture</h3>
+              <p>A lot of art and information is graphics centered, and there are increasing gaps in art accessibility. The use of tactiles is not widespread, and resources are unequally distributed.</p>
+            </div>
+          </article>
+
+          <article class="post reveal">
+            <div class="post-thumb thumb-lav" aria-hidden="true"></div>
+            <div class="post-body">
+              <h3>A Human-Centered View</h3>
+              <p>Tactiles are not treated as a standard feature, and quality and implementation are not very high. Low quality tactiles can make a museum experience frustrating, and even bad. Our idea: make tactile information more accessible.</p>
+            </div>
+          </article>
+
+          <article class="post reveal">
+            <div class="post-thumb thumb-butter" aria-hidden="true"></div>
+            <div class="post-body">
+              <h3>How is the system set up?</h3>
+              <p>Museums have historically emphasized “look but don’t touch,” prioritizing preservation and visual contemplation over multisensory engagement. Blind visitors also have less autonomy compared to sighted visitors who can walk freely through galleries.</p>
+            </div>
+          </article>
+
+          <article class="post reveal">
+            <div class="post-thumb thumb-navy" aria-hidden="true"></div>
+            <div class="post-body">
+              <h3>Throughlines: AIGA Design Educators Conference</h3>
+              <p>In a 2023 study, 83% of blind and visually impaired museum visitors reported difficulty participating with exhibits (Fortuna et al.). Durable, high quality, custom tactiles are expensive and hard to produce within a museum’s budget. Our lightning presentation reflects in-progress research at the intersection of accessible design, material exploration, and web development.</p>
+            </div>
+          </article>
+
+          <article class="post reveal">
+            <div class="post-thumb thumb-lav" aria-hidden="true"></div>
+            <div class="post-body">
+              <h3>What to look out for</h3>
+              <p>We want to avoid creating tactile graphics without receiving iterative feedback, building a website which is unclear, confusing, and not accessible, and publishing tactile graphics which are hard to access and recreate. We also need to create for different tactile sensitivity levels.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY / RESOURCES ============ -->
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <svg class="shapes" aria-hidden="true" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+        <path class="s-lav" d="M0 0h380c0 160-120 280-300 300L0 310z"/>
+        <path class="s-butter" d="M1200 0v260c-140 0-250-90-280-260z"/>
+        <path class="s-navy" d="M1200 560v340H860c30-190 170-320 340-340z"/>
+        <path class="s-navy" d="M0 900V640c120 20 210 130 230 260z"/>
+      </svg>
+
+      <div class="container">
+        <header class="section-head on-shapes reveal">
+          <p class="eyebrow">Gallery &amp; Resources</p>
+          <h2 id="gallery-title" class="display-lg">Tactiles we’ve made</h2>
+        </header>
+
+        <ul class="cards" role="list">
+          <!-- Each card opens a detail view. Artwork to be added later. -->
+          <li class="reveal">
+            <button type="button" class="card card-butter" data-item="0">
+              <span class="card-band">Textile</span>
+              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-title"><em>Chicken Little</em></span>
+              <span class="card-meta">After Nellie Mae Rowe · Needle felting</span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="card card-lav" data-item="1">
+              <span class="card-band">Textile</span>
+              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-title">Hand Embroidery Swatches</span>
+              <span class="card-meta">Felt sheet, embroidery floss</span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="card card-navy" data-item="2">
+              <span class="card-band">Swell</span>
+              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-title">LUAG Map Variants</span>
+              <span class="card-meta">Swell paper</span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="card card-lav" data-item="3">
+              <span class="card-band">3D</span>
+              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-title">3D Frog</span>
+              <span class="card-meta">3D filament</span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="card card-navy" data-item="4">
+              <span class="card-band">What We Carry</span>
+              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-title"><em>Every Cotton Ball is a Moment of Pain</em></span>
+              <span class="card-meta">After Gary Graves · Needle felting, embroidery floss</span>
+            </button>
+          </li>
+          <li class="reveal">
+            <button type="button" class="card card-butter" data-item="5">
+              <span class="card-band">What We Carry</span>
+              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-title"><em>Head of Man</em></span>
+              <span class="card-meta">After Leonard Baskin · Muslin, thread, embroidery machine</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ COMMUNITY / PARTNERS ============ -->
+    <section class="partners" id="partners" aria-labelledby="partners-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Community &amp; Partners</p>
+          <h2 id="partners-title" class="display-lg">Who we are</h2>
+        </header>
+
+        <div class="partner-card reveal">
+          <div class="partner-text">
+            <h3>The Research Team</h3>
+            <p><em>Please Touch!</em> is an exhibition-style representation of a student research project at Lehigh University, through the Creative Inquiry Impact Fellowship program.</p>
+            <ul class="people" role="list">
+              <li><span class="name">Natalie Corwin</span> ’27</li>
+              <li><span class="name">Kripa Krishnamurthy</span> ’28</li>
+              <li><span class="name">Melina Sawyers</span> ’28</li>
+            </ul>
+            <h3>Mentors</h3>
+            <ul class="people" role="list">
+              <li><span class="name">Jenny Kowalski</span> Art, Architecture, and Design</li>
+              <li><span class="name">Elise Schaffer</span> Lehigh University Art Galleries</li>
+            </ul>
+          </div>
+          <div class="partner-panel" aria-hidden="true">
+            <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+              <rect width="300" height="400" class="s-navy"/>
+              <path class="s-lav" d="M0 250c80-30 170 0 210 80l20 70H0z"/>
+              <path class="s-butter" d="M300 0v150c-70 0-120-60-130-150z"/>
+              <g class="s-cream"><circle cx="90" cy="110" r="14"/><circle cx="130" cy="110" r="14"/><circle cx="90" cy="150" r="14"/><circle cx="130" cy="190" r="14"/></g>
+            </svg>
+          </div>
+        </div>
+
+        <p class="partner-note reveal">Prototypes are evaluated by Blind and Low-Vision users through a local partner organization, who test the quality and effectiveness of tactiles. Their feedback centers Blind perspectives in everything we make.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-lead reveal">The goal is to share these methods through a website that others can use to create their own tactile graphics.</p>
+      <p class="footer-big reveal">Nothing for us <span>without us.</span></p>
+      <div class="footer-bottom">
+        <p>Designing Tactile Communication<br>Lehigh University · © 2026</p>
+        <ul class="footer-links" role="list">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#top">Back to top <span aria-hidden="true">↑</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ GALLERY DETAIL ============ -->
+  <dialog class="detail" id="detail" aria-labelledby="detail-title">
+    <div class="detail-inner">
+      <button type="button" class="detail-close" aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <div class="detail-art" aria-hidden="true"></div>
+      <div class="detail-text">
+        <p class="eyebrow" id="detail-group"></p>
+        <h2 id="detail-title"></h2>
+        <p id="detail-materials" class="detail-materials"></p>
+        <p id="detail-desc"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
