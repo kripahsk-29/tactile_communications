@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -42,28 +42,13 @@
 
     <!-- ============ HOME / HERO ============ -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <p class="eyebrow reveal">LUAG Lab, Lehigh University Art Galleries &nbsp;·&nbsp; November 4, 2026 – February 26, 2027</p>
-
       <div class="hero-title-wrap reveal">
         <h1 id="hero-title" class="hero-title">
-          <span class="hero-line hero-line-1">Please</span>
-          <span class="hero-line hero-line-2">Touch!</span>
+          <span class="hero-line hero-line-1">Designing</span>
+          <span class="hero-line hero-line-2">Tactile</span>
+          <span class="hero-line hero-line-3">Communication</span>
         </h1>
-        <p class="hero-aside"><strong>Designing Tactile Communication.</strong> Exploring reproducible methods for translating visual art and information into tactile graphics.</p>
-      </div>
-
-      <div class="hero-methods reveal">
-        <p class="method"><span class="method-letter" aria-hidden="true">A</span>3D Printing</p>
-        <span class="slash" aria-hidden="true"></span>
-        <figure class="hero-figure">
-          <!-- TODO: replace with a photo of our work -->
-          <div class="img-placeholder" role="img" aria-label="Placeholder for a photo of our tactile work">
-            <span>Picture of our work</span>
-          </div>
-        </figure>
-        <p class="method"><span class="method-letter" aria-hidden="true">B</span>Swell Paper</p>
-        <span class="slash" aria-hidden="true"></span>
-        <p class="method"><span class="method-letter" aria-hidden="true">C</span>Textiles</p>
+        <p class="hero-sub">Exploring reproducible methods for translating visual art and information into tactile graphics.</p>
       </div>
 
       <a href="#about" class="scroll-cue" aria-label="Scroll to introduction">
@@ -106,7 +91,15 @@
           </li>
           <li class="stamp reveal">
             <div class="stamp-inner">
-              <div class="stamp-art stamp-art-2" aria-hidden="true"></div>
+              <div class="stamp-art stamp-video">
+                <video src="images/process-embroidery.mp4" poster="images/process-embroidery-poster.jpg"
+                       muted loop playsinline preload="none"
+                       aria-label="An embroidery machine stitching a tactile version of Head of Man onto fabric."></video>
+                <button type="button" class="video-toggle" aria-label="Play video" data-playing="false">
+                  <svg class="i-play" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M7 5l12 7-12 7z" fill="currentColor"/></svg>
+                  <svg class="i-pause" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg>
+                </button>
+              </div>
               <h3>Exploratory</h3>
               <p>Use resources, media, and technologies to explore tactile replication.</p>
               <span class="stamp-num" aria-hidden="true">02</span>
@@ -142,7 +135,10 @@
 
         <div class="posts">
           <article class="post reveal">
-            <div class="post-thumb thumb-navy" aria-hidden="true"></div>
+            <div class="post-thumb post-photo">
+              <img src="images/access-for-all.jpg" width="1200" height="895" loading="lazy"
+                   alt="Natalie Corwin and Melina Sawyers presenting at a table beside a projected slide that reads Access for All.">
+            </div>
             <div class="post-body">
               <h3>The Big Picture</h3>
               <p>A lot of art and information is graphics centered, and there are increasing gaps in art accessibility. The use of tactiles is not widespread, and resources are unequally distributed.</p>
@@ -150,7 +146,10 @@
           </article>
 
           <article class="post reveal">
-            <div class="post-thumb thumb-lav" aria-hidden="true"></div>
+            <div class="post-thumb post-photo">
+              <img src="images/please-touch-tactiles.jpg" width="900" height="1200" loading="lazy"
+                   alt="Tactiles laid out on a table, including embroidered and felt versions of Head of Man and Every Cotton Ball is a Moment of Pain, the pink embroidery swatch, and a swell paper map.">
+            </div>
             <div class="post-body">
               <h3>A Human-Centered View</h3>
               <p>Tactiles are not treated as a standard feature, and quality and implementation are not very high. Low quality tactiles can make a museum experience frustrating, and even bad. Our idea: make tactile information more accessible.</p>
@@ -166,20 +165,16 @@
           </article>
 
           <article class="post reveal">
-            <div class="post-thumb thumb-navy" aria-hidden="true"></div>
+            <div class="post-thumb post-photo">
+              <img src="images/aiga-dec-2026.jpg?v=2" width="600" height="600" loading="lazy"
+                   alt="Melina Sawyers and Natalie Corwin smiling together, wearing their conference badges, at the 2026 AIGA Design Educators Conference.">
+            </div>
             <div class="post-body">
-              <h3>Throughlines: AIGA Design Educators Conference</h3>
-              <p>In a 2023 study, 83% of blind and visually impaired museum visitors reported difficulty participating with exhibits (Fortuna et al.). Durable, high quality, custom tactiles are expensive and hard to produce within a museum’s budget. Our lightning presentation reflects in-progress research at the intersection of accessible design, material exploration, and web development.</p>
+              <h3>2026 AIGA Design Educators Conference</h3>
+              <p>Members Natalie Corwin and Melina Sawyers, with the guidance of Professor Kowalski, presented our current research and met amazing people working in the community!</p>
             </div>
           </article>
 
-          <article class="post reveal">
-            <div class="post-thumb thumb-lav" aria-hidden="true"></div>
-            <div class="post-body">
-              <h3>What to look out for</h3>
-              <p>We want to avoid creating tactile graphics without receiving iterative feedback, building a website which is unclear, confusing, and not accessible, and publishing tactile graphics which are hard to access and recreate. We also need to create for different tactile sensitivity levels.</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -200,11 +195,11 @@
         </header>
 
         <ul class="cards" role="list">
-          <!-- Each card opens a detail view. Artwork to be added later. -->
+          <!-- Each card opens a detail view. Photos and alt text live in script.js (items). -->
           <li class="reveal">
             <button type="button" class="card card-butter" data-item="0">
               <span class="card-band">Textile</span>
-              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-art" aria-hidden="true"><img src="images/chicken-little.jpg" alt="" loading="lazy"></span>
               <span class="card-title"><em>Chicken Little</em></span>
               <span class="card-meta">After Nellie Mae Rowe · Needle felting</span>
             </button>
@@ -212,7 +207,7 @@
           <li class="reveal">
             <button type="button" class="card card-lav" data-item="1">
               <span class="card-band">Textile</span>
-              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-art card-art-bottom" aria-hidden="true"><img src="images/embroidery-swatches.jpg" alt="" loading="lazy"></span>
               <span class="card-title">Hand Embroidery Swatches</span>
               <span class="card-meta">Felt sheet, embroidery floss</span>
             </button>
@@ -220,9 +215,9 @@
           <li class="reveal">
             <button type="button" class="card card-navy" data-item="2">
               <span class="card-band">Swell</span>
-              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-art card-art-top" aria-hidden="true"><img src="images/luag-map-swell.jpg" alt="" loading="lazy"></span>
               <span class="card-title">LUAG Map Variants</span>
-              <span class="card-meta">Swell paper</span>
+              <span class="card-meta">Swell Machine, used at different gradients</span>
             </button>
           </li>
           <li class="reveal">
@@ -236,20 +231,48 @@
           <li class="reveal">
             <button type="button" class="card card-navy" data-item="4">
               <span class="card-band">What We Carry</span>
-              <span class="card-art" aria-hidden="true"></span>
+              <!-- On hover/focus the photo splits into two squares: swell paper + embroidery versions -->
+              <span class="card-art card-split" aria-hidden="true">
+                <img class="split-main" src="images/cotton-ball-embroidery.jpg" alt="" loading="lazy">
+                <span class="split-pane split-a">
+                  <img class="split-img" src="images/cotton-ball-swell.jpg" alt="" loading="lazy">
+                  <span class="split-label">Swell Paper</span>
+                </span>
+                <span class="split-pane split-b">
+                  <img class="split-img" src="images/cotton-ball-embroidery.jpg" alt="" loading="lazy">
+                  <span class="split-label">Embroidery</span>
+                </span>
+              </span>
               <span class="card-title"><em>Every Cotton Ball is a Moment of Pain</em></span>
-              <span class="card-meta">After Gary Graves · Needle felting, embroidery floss</span>
+              <span class="card-meta">After Gary Graves · Swell paper and embroidery</span>
             </button>
           </li>
           <li class="reveal">
             <button type="button" class="card card-butter" data-item="5">
               <span class="card-band">What We Carry</span>
-              <span class="card-art" aria-hidden="true"></span>
+              <span class="card-art" aria-hidden="true"><img src="images/head-of-man-swell.jpg" alt="" loading="lazy"></span>
               <span class="card-title"><em>Head of Man</em></span>
-              <span class="card-meta">After Leonard Baskin · Muslin, thread, embroidery machine</span>
+              <span class="card-meta">Swell Paper, two different gradients</span>
             </button>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ============ EXHIBITION ============ -->
+    <section class="exhibit" id="exhibition" aria-labelledby="exhibit-title">
+      <div class="container exhibit-grid">
+        <figure class="exhibit-photo reveal">
+          <img src="images/please-touch-tactiles.jpg" width="900" height="1200" loading="lazy"
+               alt="Tactiles for the exhibition laid out on a table: embroidered and felt versions of Head of Man and Every Cotton Ball is a Moment of Pain, the felted Chicken Little, the pink embroidery swatch, and swell paper maps.">
+        </figure>
+        <div class="exhibit-text reveal">
+          <p class="eyebrow">The Exhibition</p>
+          <h2 id="exhibit-title" class="display-lg"><em>Please Touch!</em></h2>
+          <p class="exhibit-when">November 4, 2026<br>LUAG Lab, Lehigh University Art Galleries</p>
+          <p><em>Please Touch!</em> is an exhibition-style representation of our student research project, exploring reproducible methods for translating visual art and information into tactile graphics.</p>
+          <p>The installation highlights our tactile translations of <em>Head of Man</em> by Leonard Baskin and <em>Every Cotton Ball is a Moment of Pain</em> by Gary Graves. Explore the exhibition and learn how tactile objects help bridge this gap, connecting audiences of varying abilities through touch.</p>
+        </div>
       </div>
     </section>
 
@@ -264,7 +287,6 @@
         <div class="partner-card reveal">
           <div class="partner-text">
             <h3>The Research Team</h3>
-            <p><em>Please Touch!</em> is an exhibition-style representation of a student research project at Lehigh University, through the Creative Inquiry Impact Fellowship program.</p>
             <ul class="people" role="list">
               <li><span class="name">Natalie Corwin</span> ’27</li>
               <li><span class="name">Kripa Krishnamurthy</span> ’28</li>
@@ -272,7 +294,7 @@
             </ul>
             <h3>Mentors</h3>
             <ul class="people" role="list">
-              <li><span class="name">Jenny Kowalski</span> Art, Architecture, and Design</li>
+              <li><span class="name">Professor Jenny Kowalski</span> Art, Architecture, and Design</li>
               <li><span class="name">Elise Schaffer</span> Lehigh University Art Galleries</li>
             </ul>
           </div>
@@ -286,7 +308,54 @@
           </div>
         </div>
 
-        <p class="partner-note reveal">Prototypes are evaluated by Blind and Low-Vision users through a local partner organization, who test the quality and effectiveness of tactiles. Their feedback centers Blind perspectives in everything we make.</p>
+        <!-- Partners slideshow: no autoplay; arrows, dots, keyboard and swipe -->
+        <section class="partners-slides reveal" aria-roledescription="carousel" aria-labelledby="slides-title">
+          <div class="slides-head">
+            <h3 id="slides-title">Our Partners</h3>
+            <div class="slides-controls">
+              <button type="button" class="slide-btn" data-dir="-1" aria-label="Previous partner">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+              </button>
+              <button type="button" class="slide-btn" data-dir="1" aria-label="Next partner">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="slides-viewport">
+            <div class="slides-track" aria-live="polite">
+              <article class="slide" aria-roledescription="slide" aria-label="1 of 3">
+                <div class="slide-mark mark-navy" aria-hidden="true">LUAG</div>
+                <div class="slide-body">
+                  <h4>Lehigh University Art Galleries</h4>
+                  <p class="slide-person">Elise Schaffer, Coordinator of Museum Experience and Access</p>
+                  <p>Our museum partner, guiding the tactiles for the gallery and the LUAG Lab installation.</p>
+                </div>
+              </article>
+              <article class="slide" aria-roledescription="slide" aria-label="2 of 3">
+                <div class="slide-mark mark-lav" aria-hidden="true">LVCIL</div>
+                <div class="slide-body">
+                  <h4>Lehigh Valley Center for Independent Living</h4>
+                  <p class="slide-person">Ashley Patete, Accessibility Coordinator</p>
+                </div>
+              </article>
+              <article class="slide" aria-roledescription="slide" aria-label="3 of 3">
+                <div class="slide-mark mark-butter" aria-hidden="true">CI</div>
+                <div class="slide-body">
+                  <h4>Lehigh University Office of Creative Inquiry</h4>
+                  <p class="slide-person">Creative Inquiry Impact Fellowship</p>
+                  <p>Instrumental in guiding the project forward.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="slides-dots" role="group" aria-label="Choose a partner">
+            <button type="button" class="dot" aria-label="Partner 1: Lehigh University Art Galleries"></button>
+            <button type="button" class="dot" aria-label="Partner 2: Lehigh Valley Center for Independent Living"></button>
+            <button type="button" class="dot" aria-label="Partner 3: Lehigh University Office of Creative Inquiry"></button>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -314,7 +383,7 @@
       <button type="button" class="detail-close" aria-label="Close">
         <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2"/></svg>
       </button>
-      <div class="detail-art" aria-hidden="true"></div>
+      <div class="detail-art" id="detail-art"></div>
       <div class="detail-text">
         <p class="eyebrow" id="detail-group"></p>
         <h2 id="detail-title"></h2>
@@ -324,6 +393,6 @@
     </div>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

@@ -58,15 +58,104 @@
     reveals.forEach((el) => el.classList.add('in'));
   }
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Process video ----------
+     Plays muted only while on screen; never autoplays with reduced motion. */
+  document.querySelectorAll('.stamp-video').forEach((wrap) => {
+    const video = wrap.querySelector('video');
+    const btn = wrap.querySelector('.video-toggle');
+    let userPaused = reduceMotion;
+
+    const sync = () => {
+      const playing = !video.paused;
+      btn.dataset.playing = String(playing);
+      btn.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
+    };
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+
+    btn.addEventListener('click', () => {
+      if (video.paused) { userPaused = false; video.play().catch(() => {}); }
+      else { userPaused = true; video.pause(); }
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && !userPaused) video.play().catch(() => {});
+          else if (!e.isIntersecting) video.pause();
+        });
+      }, { threshold: 0.4 }).observe(video);
+    }
+  });
+
+  /* ---------- Partners slideshow ---------- */
+  document.querySelectorAll('.partners-slides').forEach((show) => {
+    const track = show.querySelector('.slides-track');
+    const slides = [...show.querySelectorAll('.slide')];
+    const dots = [...show.querySelectorAll('.dot')];
+    let index = 0;
+
+    const go = (i) => {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+      slides.forEach((s, n) => {
+        const active = n === index;
+        s.setAttribute('aria-hidden', String(!active));
+        s.inert = !active;
+      });
+      dots.forEach((d, n) => d.setAttribute('aria-current', String(n === index)));
+    };
+
+    show.querySelectorAll('.slide-btn').forEach((b) =>
+      b.addEventListener('click', () => go(index + Number(b.dataset.dir))));
+    dots.forEach((d, n) => d.addEventListener('click', () => go(n)));
+
+    show.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') go(index + 1);
+      if (e.key === 'ArrowLeft') go(index - 1);
+    });
+
+    // Swipe on touch screens
+    const viewport = show.querySelector('.slides-viewport');
+    let startX = null;
+    viewport.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+    viewport.addEventListener('pointerup', (e) => {
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+
+    go(0);
+  });
+
   /* ---------- Gallery detail view ----------
      Fill in descriptions and images here as artwork is added. */
   const items = [
-    { group: 'Textile', title: 'Chicken Little', artist: 'Nellie Mae Rowe', materials: 'Needle felting (fiber, felt sheet)', desc: '' },
-    { group: 'Textile', title: 'Hand Embroidery Swatches', materials: 'Felt sheet, embroidery floss', desc: '' },
-    { group: 'Swell', title: 'LUAG Map Variants', materials: 'Swell paper', desc: '' },
-    { group: '3D', title: '3D Frog', materials: '3D filament', desc: '' },
-    { group: 'What We Carry', title: 'Every Cotton Ball is a Moment of Pain', artist: 'Gary Graves', materials: 'Needle felting, embroidery floss', desc: '' },
-    { group: 'What We Carry', title: 'Head of Man', artist: 'Leonard Baskin', materials: 'Muslin, thread, embroidery machine', desc: '' }
+    { group: 'Textile', title: 'Chicken Little', artist: 'Nellie Mae Rowe', materials: 'Needle felting (fiber, felt sheet)', desc: '',
+      photos: [
+        { src: 'images/chicken-little.jpg', alt: 'Needle-felted tactile on purple felt: a light blue bird holding an orange shape with a small white animal inside, beside a green plant stem.' }
+      ] },
+    { group: 'Textile', title: 'Hand Embroidery Swatches', materials: 'Felt sheet, embroidery floss', desc: '',
+      photos: [
+        { src: 'images/embroidery-swatches.jpg', alt: 'Pink felt swatch with stitched lines, French knots, small stars, purple felted shapes, and blue felt cutouts outlined in red stitching.' }
+      ] },
+    { group: 'Swell', title: 'LUAG Map Variants', materials: 'Swell Machine, used at different gradients', desc: '',
+      photos: [
+        { src: 'images/luag-map-swell.jpg', alt: 'Two swell paper versions of the LUAG Lower Gallery map, stacked, each with raised walls, a key, and braille labels.' }
+      ] },
+    { group: '3D', title: '3D Frog', materials: '3D filament', desc: '', photos: [] },
+    { group: 'What We Carry', title: 'Every Cotton Ball is a Moment of Pain', artist: 'Gary Graves', materials: 'Swell paper and embroidery', desc: '',
+      photos: [
+        { src: 'images/cotton-ball-swell.jpg', label: 'Swell Paper', alt: 'Four swell paper prints of a standing figure in a doorway, each with a different amount of raised texture.' },
+        { src: 'images/cotton-ball-embroidery.jpg', label: 'Embroidery', alt: 'Felt tactile of a standing figure made of raised white cotton-like bumps, in a dark doorway, with a stitched floor and frame.' }
+      ] },
+    { group: 'What We Carry', title: 'Head of Man', artist: 'Leonard Baskin', materials: 'Swell Paper, two different gradients', desc: '',
+      photos: [
+        { src: 'images/head-of-man-swell.jpg', alt: 'Two swell paper prints of a large rounded head side by side, made at two different gradients.' }
+      ] }
   ];
 
   const dialog = document.getElementById('detail');
@@ -79,7 +168,28 @@
       $('detail-group').textContent = item.group;
       $('detail-title').textContent = item.artist ? item.title + ' (after ' + item.artist + ')' : item.title;
       $('detail-materials').textContent = 'Materials: ' + item.materials;
-      $('detail-desc').textContent = item.desc || 'Photos and description coming soon.';
+      $('detail-desc').textContent = item.desc || 'Description coming soon.';
+
+      const art = $('detail-art');
+      art.replaceChildren();
+      art.className = 'detail-art';
+      if (item.photos.length) {
+        art.classList.add('has-photos', 'count-' + item.photos.length);
+        item.photos.forEach((p) => {
+          const fig = document.createElement('figure');
+          fig.className = 'detail-photo';
+          const img = document.createElement('img');
+          img.src = p.src;
+          img.alt = p.alt;
+          fig.append(img);
+          if (p.label) {
+            const cap = document.createElement('figcaption');
+            cap.textContent = p.label;
+            fig.append(cap);
+          }
+          art.append(fig);
+        });
+      }
       opener = card;
       dialog.showModal();
     });
