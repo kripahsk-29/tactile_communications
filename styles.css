@@ -334,7 +334,7 @@ main:focus { outline: none; }
 :root[data-theme="dark"] .braille { fill: var(--lav); }
 .hero-collage .hand-note {
   position: absolute; z-index: 6;
-  right: 0; bottom: -4%;
+  right: 0; bottom: -13%;
   transform: rotate(-8deg);
   font-size: clamp(1.4rem, 2.4vw, 2rem);
 }
@@ -361,7 +361,7 @@ html[data-motion="paused"] .exhibit-badge { animation-play-state: paused !import
   position: relative;
   margin: 0 auto;
   width: min(1100px, 100%);
-  padding: clamp(1.5rem, 4vw, 3rem) var(--gutter) calc(var(--wave-h) + clamp(2.5rem, 5vw, 4rem));
+  padding: clamp(2.75rem, 5vw, 4rem) var(--gutter) calc(var(--wave-h) + clamp(2.5rem, 5vw, 4rem));
   text-align: center;
 }
 .motto blockquote { margin: 0; }
